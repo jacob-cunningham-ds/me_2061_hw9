@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21a0fcfe48bd0cf79c5d2966fbf44003edb007eb44fb37e66c8180749deca4af
-size 147
+function [ p ] = DEIM(U)
+[~,~,p] = qr(U', 'vector'); % qdeim
+p = p(1:size(U,2));         % take points equal to number of basis 
+p = sort(p);
+end
+
